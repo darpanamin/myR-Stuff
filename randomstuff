@@ -139,6 +139,7 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
 DT<-fread(fileURL)
 DT[,mean(pwgtp15),by=SEX]
 
+ library(dplyr)
 cran <- tbl_df(mydf)
 select(cran, ip_id, package, country)
 filter(cran, package == "swirl")
@@ -147,3 +148,5 @@ filter(cran, country == "US" | country == "IN")
 filter(cran, !is.na(r_version))
 arrange(cran2, ip_id,desc(country))
 mutate(cran3, size_mb = size / 2^20)
+mutate(cran3, size_mb = size / 2^20,size_gb = size_mb/2^10)
+summarize(cran, avg_bytes = mean(size))
