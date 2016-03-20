@@ -1,0 +1,143 @@
+ 
+  DFM <-  as.data.frame( matrix(0, ncol = 4, nrow = 1))
+ for (j in 1:nrow(good))
+    {DFM[st,] <- good[j,] 
+    st = st+1
+  }##end inner FOR
+  
+  for (t in cc_list) {print(length(MyData[[t]][[2]])) }
+  
+  for (t in cc_list) {
+  tempdf <- MyData[[t]][[2]]
+  for (h in 1:length(tempdf))
+  { if (!is.na(MyData[[t]][[2]][[h]]) & !is.na(MyData[[t]][[3]][[h]]) ){
+  tempsul[innerstart] <- MyData[[t]][[2]][[h]]
+  tempnit[innerstart] <- MyData[[t]][[3]][[h]]
+  innerstart = innerstart + 1}
+  }
+  
+  }
+  rmbl = rmbl+1
+  }
+  
+  MyData[[1]][[2]]
+  complete.cases(MyData[[1]][[2]])
+  
+   c_c<- na.omit(MyData[2:3])
+  
+  MyData[[331]][[4]][[1]] ##file,column,row
+  lapply(c_c,"[",,2)
+  cor(MyData[[2]]$sulfate,MyData[[2]]$nitrate,use="complete.obs")
+  
+  rm(list=ls())
+  x[!is.na(x)]
+  x[x>0]
+  x[!is.na(x)&x>0]
+  x[c(3,5,7)]
+  x[c(-2,-10)]
+  x[-c(2,10)]
+  vect <- c(foo = 11, bar =2, norf = NA)
+  names(vect)
+  identical(vect,vect2)
+  vect["bar"]
+  vect[c("foo", "bar")]
+  
+  dim(my_vector)
+  dim(my_vector) <- c(4,5)
+  class(my_vector)
+  
+  my_matrix2 <-matrix(1:20,4,5)
+  
+  cbind(patients,my_matrix)
+  my_data <- data.frame(patients,my_matrix)
+  colnames(my_data) <- cnames
+  
+  !(5 == 7)
+  
+  TRUE & c(TRUE,FALSE,FALSE)
+[1]  TRUE FALSE FALSE
+
+TRUE && c(TRUE,FALSE,FALSE)
+[1] TRUE
+
+ TRUE || c(TRUE, FALSE, FALSE)
+  TRUE | c(TRUE, FALSE, FALSE)
+  
+ints <- sample(10)
+ints > 5
+
+which(ints>7)
+[1]  2  5 10
+
+any(ints<0)
+[1] FALSE
+
+all(ints>0)
+lapply(x,mean)
+
+x <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2)) 
+lapply(x, function(elt) elt[,1])
+
+f <- gl(3,10)
+
+s <- split(airquality, airquality$Month)
+lapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")]))
+ sapply(s, function(x) colMeans(x[, c("Ozone", "Solar.R", "Wind")],na.rm = TRUE))
+ 
+ apply(iris[, 1:4], 2, mean) ## by column
+ 
+hsb6 <- iris[iris$Species == "virginica", ]
+
+class(flags)
+
+lapply(flag_colors,sum)
+ lapply(unique_vals, function(elem) elem[2])
+ 
+table(flags$landmass)
+
+ tapply(flags$population, flags$red, summary)
+
+lapply(listB, function(data) sqrt(data$x))
+unlist( lapply(listB, function(data) data$x) )
+
+unlist( lapply(listB, function(data) data[[my_column]]) )
+
+x <- c(3,4,5,6,7,10)
+b <- makeVector(x)
+c <- cachemean(b)
+
+args <- list(...)
+  place <- args[["place"]]
+  
+transform(h, heartAttack = as.numeric(heartAttack))
+
+as.character(subset(r, state == "HI")$hospital)
+
+plot(x = cars$speed, y = cars$dist, xlab = "Speed")
+
+stanf <-subset(hospDat, grepl("STANFORD HOSP", hospDat$Hospital.Name))
+ fp<-file.path(getwd(),"R","nba_ceil_floor.csv")
+ 
+  
+download.file(quizurl, destfile= "./R/acs.csv")
+list.files("./R")
+
+rowindex <- 18:23
+colindex <- 7:15
+dat<-read.xlsx("./R/getdata-data-DATA.gov_NGAP.xlsx", sheetIndex = 1,colIndex = colindex, rowIndex = rowindex )
+
+library(RCurl)
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml
+xData <- getURL(fileurl)
+doc <- xmlParse(xData)
+docTP <- xmlTreeParse(xData,useInternal=TRUE)
+zips<-xpathSApply(rootNode,"//zipcode",xmlValue)
+length(zips[zips=="21231"])
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
+DT<-fread(fileURL)
+DT[,mean(pwgtp15),by=SEX]
+
+#1: 53
+#2: 36534720
