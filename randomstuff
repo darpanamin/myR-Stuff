@@ -143,5 +143,5 @@ cran <- tbl_df(mydf)
 select(cran, ip_id, package, country)
 filter(cran, package == "swirl")
 filter(cran, r_os == "linux-gnu", size > 100500)
-#1: 53
-#2: 36534720
+filter(cran, country == "US" | country == "IN")
+filter(cran, !is.na(r_version))
